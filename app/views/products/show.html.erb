@@ -1,7 +1,3 @@
 <h1>Product</h1>
 <%= link_to "Index" , products_path %>
-<p> 
-  <%= @product.name %>
-  <br>
-  <%= @product.price %>
-</p>
+<%= render @product %>

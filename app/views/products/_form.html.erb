@@ -1,0 +1,12 @@
+<%= link_to "Index" , products_path %>
+<%= form_with model: product do |form| %>
+  <%= form.label "name", :name %>
+  <%= form.text_field :name %>   
+  <br>
+
+  <%= form.label "price", :price %>
+  <%= form.number_field :price, step: 0.01 %> 
+  <br>
+  
+  <%= form.submit %>
+<% end %>

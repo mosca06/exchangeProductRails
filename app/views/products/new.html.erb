@@ -1,12 +1,2 @@
 <h1>New</h1>
-<%= form_with model: @product do |form| %>
-  <%= form.label "name", :name %>
-  <%= form.text_field :name %>   
-  <br>
-
-  <%= form.label "price", :price %>
-  <%= form.number_field :price, step: 0.01 %> 
-  <br>
-  
-  <%= form.submit %>
-<% end %>
+<%= render 'form', product: @product %>
