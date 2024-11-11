@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_03_181021) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_10_120521) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.bigint "products_supplier_id", null: false
+    t.bigint "store_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["products_supplier_id"], name: "index_items_on_products_supplier_id"
+    t.index ["store_id"], name: "index_items_on_store_id"
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
@@ -30,12 +40,20 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_03_181021) do
     t.index ["supplier_id"], name: "index_products_suppliers_on_supplier_id"
   end
 
+  create_table "stores", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "suppliers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "items", "products_suppliers"
+  add_foreign_key "items", "stores"
   add_foreign_key "products_suppliers", "products"
   add_foreign_key "products_suppliers", "suppliers"
 end

@@ -6,6 +6,7 @@ class ProductsSuppliersController < ApplicationController
   def new
     @products = Product.all
     @suppliers = Supplier.all
+    # @options = ::FetchOptionsQuery.call
     @products_supplier = ProductsSupplier.new
   end
 
@@ -19,6 +20,8 @@ class ProductsSuppliersController < ApplicationController
   def show
     @products_supplier = ProductsSupplier.find(params[:id])
   end
+
+  private
 
   def products_supplier_params
     params.require(:products_supplier).permit(:product_id, :supplier_id)
