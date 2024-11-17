@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   root "home#index"
   resources :products
   resources :products_suppliers, only: %i[ index new create show ]
+  resources :items, only: %i[ index new create show ]
 end

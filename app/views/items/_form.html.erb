@@ -1,0 +1,15 @@
+<%= link_to "Index", items_path %>
+<%= form_with model: @item do |form| %>
+  <%= form.label "name", :name %>
+  <%= form.text_field :name %>   
+  <br>
+  <%= form.label :products_supplier_id, "Product"  %>
+  <%= form.collection_select :products_supplier_id, options.select{ |opt| opt.table == 'products_supplier'}, :id, :name, prompt: "Select a product" %>
+  <br>
+
+  <%= form.label :store_id , "Store" %>
+  <%= form.collection_select :store_id, options.select{ |opt| opt.table == 'store'}, :id, :name, prompt: "Select a store" %>
+  <br>
+  
+  <%= form.submit %>
+<% end %>

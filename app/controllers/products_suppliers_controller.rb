@@ -4,9 +4,7 @@ class ProductsSuppliersController < ApplicationController
   end
 
   def new
-    @products = Product.all
-    @suppliers = Supplier.all
-    # @options = ::FetchOptionsQuery.call
+    @options = ::FetchOptionsQuery.call
     @products_supplier = ProductsSupplier.new
   end
 

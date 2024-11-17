@@ -31,6 +31,16 @@ suppliers = [
   }
 ]
 
+stores = [
+  {
+    name: 'lojinha 1'
+  },
+  {
+    name: 'store 2'
+  }
+]
+
 Supplier.create(suppliers)
 Product.create(products)
 Product.all.each { |product| Supplier.all.sample.products << product }
+Store.create(stores)

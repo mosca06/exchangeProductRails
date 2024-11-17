@@ -1,0 +1,8 @@
+<p> 
+  <%= item.products_supplier.product.name %>
+  <%= item.products_supplier.supplier.name %>
+  <%= item.store.name %>
+  <% if action_name == 'index' %> 
+    <%= link_to "Show", item %>
+  <% end %>
+</p>
