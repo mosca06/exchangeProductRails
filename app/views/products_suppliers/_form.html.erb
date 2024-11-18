@@ -5,7 +5,7 @@
   <br>
 
   <%= form.label :supplier_id , "Supplier" %>
-  <%= form.collection_select :supplier_id, options.select{ |opt| opt.table == 'suppliers'}, :id, :name, prompt: "Select a supplier" %>
+  <%= form.collection_select :supplier_id, options.select{ |opt| opt.table == 'supplier'}, :id, :name, prompt: "Select a supplier" %>
   <br>
   
   <%= form.submit %>
