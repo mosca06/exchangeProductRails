@@ -40,7 +40,14 @@ stores = [
   }
 ]
 
+draft_orders = [
+  {
+    total_price: 100.00
+  }
+]
+
 Supplier.create(suppliers)
 Product.create(products)
 Product.all.each { |product| Supplier.all.sample.products << product }
 Store.create(stores)
+DraftOrder.create(draft_orders)

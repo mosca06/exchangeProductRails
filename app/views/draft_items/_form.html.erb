@@ -1,0 +1,12 @@
+<%= link_to "Index", draft_items_path %>
+<%= form_with model: @draft_item do |form| %>
+  <%= form.label :draft_order_id, "Draft Order"  %>
+  <%= form.collection_select :draft_order_id, options.select{ |opt| opt.table == 'draft_order'}, :id, :name, prompt: "Select a product" %>
+  <br>
+
+  <%= form.label :item_id , "Item" %>
+  <%= form.collection_select :item_id, options.select{ |opt| opt.table == 'item'}, :id, :name, prompt: "Select a supplier" %>
+  <br>
+  
+  <%= form.submit %>
+<% end %>
