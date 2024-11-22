@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :products
   resources :products_suppliers, only: %i[ index new create show ]
   resources :items, only: %i[ index new create show ]
+  resources :draft_items, only: %i[ index new create show ]
 end

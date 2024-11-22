@@ -4,7 +4,7 @@ class DraftItemsController < ApplicationController
   end
 
   def new
-    @options = ::FetchItemsOrdersOptionsQuery.call
+    @options = ::FetchDraftItemsOptionsQuery.call
     @draft_item = DraftItem.new
   end
 

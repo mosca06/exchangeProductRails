@@ -1,0 +1,7 @@
+<p> 
+  <%= draft_item.item.name %>
+  <%= draft_item.draft_order.user.name %>
+  <% if action_name == 'index' %> 
+    <%= link_to "Show", draft_item %>
+  <% end %>
+</p>
