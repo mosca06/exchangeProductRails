@@ -1,0 +1,6 @@
+<p> 
+  <%= user.name %>
+  <% if action_name == 'index' %> 
+    <%= link_to "Show Products", products_user_path(user) %>
+  <% end %>
+</p>

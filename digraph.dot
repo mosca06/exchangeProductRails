@@ -1,0 +1,10 @@
+digraph models {
+  Product -> Products_supplier;
+  Supplier -> Products_supplier  ;
+  Products_supplier -> Item;
+  Store -> Item;
+  Item -> Draft_item;
+  Draft_order -> Draft_item;
+  User -> Draft_order;
+}
+

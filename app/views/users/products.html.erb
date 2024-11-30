@@ -1,0 +1,12 @@
+<h1>Produtos Comprados por <%= @user.name %></h1>
+
+<ul>
+  <% @products_with_suppliers.each do |product| %>
+    <li>
+      <strong>Produto:</strong> <%= product.product_name %> - 
+      <strong>Fornecedor:</strong> <%= product.supplier_name %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Voltar', users_path, class: 'button' %>
